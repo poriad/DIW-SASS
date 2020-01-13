@@ -1,0 +1,122 @@
+//// @access public
+//// @author Pablo Oria
+
+/// Mixin para realizar un clearfix en elementos flotantes
+/// @group utiles
+@mixin clearfix {
+    &::after{
+        content:"";
+        display: table;
+        clear: both;
+    }
+}
+
+/// Mixin para centrar elementos
+/// @group utiles
+@mixin center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+/// Media querys:
+/// 0-600px: phone
+/// 600 - 900px: Table-portrait
+/// 900 - 1280px: Tablet landscape
+/// 1200-1800: normal styles apply
+/// 1800px + : big desktop
+/// @parameter {integer} $breakpoint -- Tamaño del navegador
+/// @group utiles
+@mixin responsive($breakpoint) {
+    // Usamos EM por que algunos navegadores no aceptan REM en medias q
+    // 1em = 16px
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 37.5em){@content;} // 600px
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em){@content;} // 900px
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em){@content;} // 1200px
+    }
+
+    @if $breakpoint == big-desktop {
+        @media only screen and (min-width: 112.5em){@content;} // 1800px
+    }
+}
+
+/// Mixin para Ancho y Alto de Elementos
+/// @parameter {integer} $width -- Ancho
+/// @parameter {integer} $height -- Alto
+/// @group tamaños
+@mixin widthAndHeight($width,$height) {
+    width: $width;
+    height: $height;
+}
+
+/// Mixin para Ancho y Alto de Elementos
+/// @parameter {integer} $size -- Tamaño fuente
+/// @parameter {integer} $weight -- Grosor fuente
+/// @group tamaños
+@mixin fontSizeAndWeight($size,$weight){
+    font-weight: $weight;
+    font-size: $size;
+}
+
+/// Mixin para Ancho y Alto de Elementos
+/// @parameter {color} $color -- Tamaño fuente
+/// @parameter {color} $background-color -- Grosor fuente
+/// @group colores
+@mixin colorAndBackgroundColor($color,$background-color){
+    color: $color;
+    background-color: $background-color;
+}
+
+/// Mixin para recorrer un mapa y generar Elementos con un background-image recogida en el mapa
+/// @parameter {map} $ImagesMap -- Mapa de background-image
+/// @group imagenes
+@mixin cardMapImages($ImagesMap){
+    @each $count, $color in $ImagesMap{
+        &-#{$count} {
+            background-image: $color;
+        }
+      }
+}
+
+/// Mixin para recorrer un mapa y generar Elementos con un background-image recogida en el mapa
+/// @parameter {map} $PicturesMap -- Mapa de background-image
+/// @group imagenes
+@mixin cardMapPictures($PicturesMap){
+    @each $count, $color in $PicturesMap{
+        &--#{$count} {
+            background-image: $color;
+        }
+      }
+}
+
+/// Mixin para recorrer una lista y generar Elementos con un background-image recogida en el mapa
+/// @parameter {list} $HeadingList -- Lista de background-image
+/// @group imagenes
+@mixin headingListGradient($HeadingList){
+    @for $i from 1 through length($HeadingList) {
+            &--#{$i} { 
+                background-image: nth($HeadingList, $i);
+            }
+        } 
+}
+
+/// Mixin para recorrer una lista y generar Elementos con un background-image recogido en la lista
+/// @parameter {list} $HeadingList -- Lista de background-image
+/// @group imagenes
+@mixin headingListPictures($PicturesList){
+    $num : 1;
+    @while $num < length($PicturesList){
+        &--#{$num} { 
+            background-image: nth($HeadingList, $num);
+        }
+        $num : $num + 1;
+    }
+}

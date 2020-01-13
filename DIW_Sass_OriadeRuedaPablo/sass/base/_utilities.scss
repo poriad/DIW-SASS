@@ -1,0 +1,32 @@
+.u-center-text{
+    text-align: center !important;
+}
+
+.u-margin-bottom-big{
+    margin-bottom: $margin-bottom-big !important;
+
+    @include responsive(tab-port){
+        margin-bottom: 5rem !important;
+    }
+}
+
+.u-margin-bottom-small{
+    margin-bottom: $margin-bottom-small !important;
+}
+
+.u-margin-bottom-medium{
+    margin-bottom: $margin-bottom-medium !important;
+    @include responsive(tab-port){
+        margin-bottom: 3rem !important;
+    }
+}
+
+.u-margin-top-big {
+    margin-top: $margin-top-big !important;
+}
+
+.u-margin-top-huge {
+    margin-top: $margin-top-huge !important;
+}
+
+// ver posible bucle

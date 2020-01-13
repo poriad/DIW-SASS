@@ -1,0 +1,52 @@
+//// @access public
+//// @author Pablo Oria
+
+/// Función para obtener la dimension del font-size en %
+/// @group utiles
+/// @parameter {float} $font-size -- Valor del tamaño de letra
+/// @parameter {float} $font-size-nav -- Valor del tamaño de letra del navegador
+/// @return {integer}
+/// @example scss -- Función Calcular Porcentaje
+@function calcFontSizeRemPercent($font-size-nav,$font-size){
+    @return percentage((($font-size / $font-size-nav)));
+}
+
+/// Función para obtener el grid
+/// @group utiles
+/// @parameter {integer} $numColumn -- Valor del nº de columna
+/// @parameter {integer} $numTotalColumn -- Valor del nº total de columnas
+/// @return {integer}
+/// @example scss -- Función Grid 1
+@function gridColumnOne($numColumn,$numTotalColumn){
+
+    @if ($numTotalColumn - $numColumn) > 1 {
+        @return calc((100% - ((#{$numTotalColumn}-#{$numColumn}) * #{$gutter-horizontal})) / #{$numTotalColumn});
+    } @else {
+        $result : calc((100% -  #{$gutter-horizontal}) / #{$numTotalColumn});
+        @return $result;
+    }
+}
+
+/// Función para obtener el grid
+/// @group utiles
+/// @parameter {integer} $numColumn -- Valor del nº de columna
+/// @parameter {integer} $numTotalColumn -- Valor del nº total de columnas
+/// @return {integer}
+/// @example scss -- Función Grid 2
+@function gridColumnTwo($numColumn,$numTotalColumn){
+    
+    @return calc(#{$numColumn} * (100% - ((((#{$numTotalColumn} - #{$numColumn} + 1) * #{$gutter-horizontal}) / #{$numTotalColumn}) + #{$gutter-horizontal})));
+}
+
+/// Función para obtener el grid
+/// @group utiles
+/// @parameter {integer} $numColumn -- Valor del nº de columna
+/// @parameter {integer} $numTotalColumn -- Valor del nº total de columnas
+/// @return {integer}
+/// @example scss -- Función Grid 3
+@function gridColumnThree($numColumn,$numTotalColumn){
+    
+    @return calc(#{$numColumn} * (100% - ((((#{$numTotalColumn} - #{$numColumn} + 1) * #{$gutter-horizontal}) / #{$numTotalColumn}) + ((#{$numTotalColumn} - #{$numColumn} + 1) *#{$gutter-horizontal}))));
+}
+
+

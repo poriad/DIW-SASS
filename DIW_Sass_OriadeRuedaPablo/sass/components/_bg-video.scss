@@ -1,0 +1,16 @@
+.bg-video{
+    // mixin
+    position: absolute;
+    top:0;
+    left: 0;
+    @include widthAndHeight(100%,100%);
+    z-index: -1;
+    opacity: .15;
+    
+    &__content{
+        @include widthAndHeight(100%,100%);
+        // Similar al bg.cover, el elemento se adecua con el ratio correcto (con objetos html)
+        object-fit: cover;
+    }
+}
+

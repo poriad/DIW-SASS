@@ -1,0 +1,161 @@
+//// @access public
+//// @author Pablo Oria
+
+/// Colores Principales
+/// @group colores-globales
+/// @type color
+$color-primary: #2193b0;
+/// @group colores-globales
+/// @type color
+$color-primary-light: #6dd5ed;
+/// @group colores-globales
+/// @type color
+$color-primary-dark: #2193b0;
+
+/// Colores Card 1
+/// @group colores-cards
+/// @type color
+$color-secondary-light: #ffb900;
+/// @group colores-cards
+/// @type color
+$color-secondary-dark: #ff7730;
+
+/// Colores Card 2
+/// @group colores-cards
+/// @type color
+$color-terciary-light: #2998ff;
+/// @group colores-cards
+/// @type color
+$color-terciary-dark: #5643fa;
+
+/// Colores Claros
+/// @group colores-claros
+/// @type color
+$color-grey-light-1: #f7f7f7;
+/// @group colores-claros
+/// @type color
+$color-grey-light-2: #eee;
+
+/// Colores Oscuros
+/// @group colores-oscuros
+/// @type color
+$color-grey-dark: #777;
+/// @group colores-oscuros
+/// @type color
+$color-grey-dark-2: #999;
+/// @group colores-oscuros
+/// @type color
+$color-grey-dark-3: #333;
+
+/// Colores Básicos
+/// @group colores-globales
+/// @type color
+$color-white: #fff;
+/// @group colores-globales
+/// @type color
+$color-black: #000;
+
+/// Tamaño de las Fuentes
+/// @group font-sizes
+/// @type float
+$default-font-size: 1.6rem;
+/// @type float | integer
+$font-size:16px;
+
+/// Tamaños genericos
+/// @group sizes
+/// @type float
+$width-100: 100%;
+/// @group sizes
+/// @type float
+$height-100: 100%;
+
+/// Grid Web
+/// @group grid
+/// @type float
+$grid-width: 114rem;
+/// @group grid
+/// @type float
+$gutter-vertical: 8rem;
+/// @group grid
+/// @type float
+$gutter-vertical-small: 6rem;
+/// @group grid
+/// @type float
+$gutter-horizontal: 6rem;
+
+/// Margenes
+/// @group margenes
+/// @type float
+$margin-bottom-big: 8rem;
+/// @group margenes
+/// @type float
+$margin-bottom-medium: 4rem;
+/// @group margenes
+/// @type float
+$margin-bottom-small: 2rem;
+/// @group margenes
+/// @type float
+$margin-top-huge: 10rem;
+/// @group margenes
+/// @type float
+$margin-top-big: 8rem;
+/// @group margenes
+/// @type float
+$margin-top-medium: 4rem;
+/// @group margenes
+/// @type float
+$margin-top-small: 2rem;
+
+/// Degradados
+/// @group degradados
+/// @type color
+$card-back-gradient-1: (linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark));
+/// @group degradados
+/// @type color
+$card-back-gradient-2: (linear-gradient(to right bottom, $color-primary-light, $color-primary-dark));
+/// @group degradados
+/// @type color
+$card-back-gradient-3: (linear-gradient(to right bottom, $color-terciary-light, $color-terciary-dark));
+/// @group degradados
+/// @type color
+$picture-gradient-url-1: (linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark),url(../img/sd-7.jpg));
+/// @group degradados
+/// @type color
+$picture-gradient-url-2: (linear-gradient(to right bottom, $color-primary-light, $color-primary-dark),url(../img/sd-8.jpg));
+/// @group degradados
+/// @type color
+$picture-gradient-url-3: (linear-gradient(to right bottom, $color-terciary-light, $color-terciary-dark),url(../img/sd-6.jpg));
+/// @group degradados
+/// @type color
+$heading-gradient-1: (linear-gradient(to right bottom, rgba($color-secondary-light, .85),rgba($color-secondary-dark, .85)));
+/// @group degradados
+/// @type color
+$heading-gradient-2: (linear-gradient(to right bottom, rgba($color-primary-light, .85),rgba($color-primary-dark, .85)));
+/// @group degradados
+/// @type color
+$heading-gradient-3: (linear-gradient(to right bottom, rgba($color-terciary-light, .85),rgba($color-terciary-dark, .85)));
+
+/// Mapas y Listas
+/// @group mapa
+/// @type map
+$ImagesMap: (
+    "1": $card-back-gradient-1,
+    "2": $card-back-gradient-2,
+    "3": $card-back-gradient-3
+
+);
+/// @group mapa
+/// @type map
+$PicturesMap: (
+    "1": $picture-gradient-url-1,
+    "2": $picture-gradient-url-2,
+    "3": $picture-gradient-url-3
+);
+/// @group lista
+/// @type list
+$HeadingList: (
+    $heading-gradient-1,
+    $heading-gradient-2,
+    $heading-gradient-3
+);
